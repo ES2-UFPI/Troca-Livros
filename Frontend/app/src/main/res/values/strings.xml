@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tinli</string>
+    <string name="start_session">INICIAR SESSÃO</string>
+    <string name="register_bt_text">CRIAR CONTA</string>
+    <string name="app_name_ltda">® Tinli.ltda</string>
+    <string name="slogan">Encontre seu próximo \n livro favorito</string>
+</resources>
