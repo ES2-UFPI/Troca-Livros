@@ -1,6 +1,8 @@
 module github.com/ES2-UFPI/Troca-Livros
 
-go 1.17
+go 1.18
+
+require github.com/gin-gonic/gin v1.7.7
 
 require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
