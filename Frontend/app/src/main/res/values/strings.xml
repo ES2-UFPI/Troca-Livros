@@ -4,4 +4,10 @@
     <string name="register_bt_text">CRIAR CONTA</string>
     <string name="app_name_ltda">® Tinli.ltda</string>
     <string name="slogan">Encontre seu próximo \n livro favorito</string>
+    <string name="email">Email</string>
+    <string name="password">Senha</string>
+    <string name="login">LOGIN</string>
+    <string name="welcome">Bem vindo de volta!</string>
+    <string name="cannot_log_in">Não consegue fazer login?</string>
+    <string name="create_new_account">CRIAR NOVA CONTA</string>
 </resources>
