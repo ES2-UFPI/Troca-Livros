@@ -1,28 +1,31 @@
+# syntax=docker/dockerfile:1
 
-# Build application
-
-FROM golang:1.17-alpine AS build
+##
+## Build
+##
+FROM golang:1.17-buster AS build
 
 WORKDIR /app
 
 COPY go.mod ./
 COPY go.sum ./
-
 RUN go mod download
 
-COPY . .
+COPY . ./
 
-RUN go build -o /rest-server ./Backend
+RUN go build -o /test
 
-
-# Deploy appliation
-
-FROM alpine
+##
+## Deploy
+##
+FROM gcr.io/distroless/base-debian10
 
 WORKDIR /
 
-COPY --from=build /rest-server /
+COPY --from=build /rest-server /rest-server
 
 EXPOSE 8080
 
-ENTRYPOINT [ "/rest-server" ]
+USER nonroot:nonroot
+
+ENTRYPOINT ["/rest-server"]
