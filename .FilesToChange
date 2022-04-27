@@ -1,0 +1,2 @@
+Banco -> connection.go
+	const variable for database connection
