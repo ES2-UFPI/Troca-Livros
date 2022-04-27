@@ -1,2 +1,5 @@
 Banco -> connection.go
 	const variable for database connection
+
+docker-compose DB configuration enrionment variables
+
