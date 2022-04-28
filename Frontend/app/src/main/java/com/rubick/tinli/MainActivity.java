@@ -18,10 +18,16 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Button startSeason = findViewById(R.id.start_season);
+        Button registerBt = findViewById(R.id.registerBt);
 
         startSeason.setOnClickListener(v ->{
             Intent login = new Intent(getApplicationContext(), Login.class);
             startActivity(login);
+        });
+
+        registerBt.setOnClickListener(v ->{
+            Intent register = new Intent(getApplicationContext(), Regiter.class);
+            startActivity(register);
         });
     }
 }

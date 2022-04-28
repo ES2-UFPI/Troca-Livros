@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
     private ImageView loginBt;
     private ImageView backBt;
+    private TextView createAccount;
     private EditText email;
     private EditText password;
 
@@ -30,6 +32,12 @@ public class Login extends AppCompatActivity {
         backBt = findViewById(R.id.back_bt);
         email = findViewById(R.id.email_input);
         password = findViewById(R.id.password_input);
+        createAccount = findViewById(R.id.createNewAccount);
+
+        createAccount.setOnClickListener(v -> {
+            Intent register = new Intent(getApplicationContext(), Regiter.class);
+            startActivity(register);
+        });
 
         loginBt.setOnClickListener(v ->{
             if(email.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
@@ -38,8 +46,7 @@ public class Login extends AppCompatActivity {
         });
 
         backBt.setOnClickListener(v -> {
-            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(mainActivity);
+            this.finish();
         });
     }
 }
