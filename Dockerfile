@@ -13,7 +13,7 @@ RUN go mod download
 
 COPY . ./
 
-RUN go build -o /test
+RUN go build -o /rest-server ./Backend
 
 ##
 ## Deploy
