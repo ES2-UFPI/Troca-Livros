@@ -37,6 +37,7 @@ func getBooksFromUser(context *gin.Context) {
 	}
 
 	context.IndentedJSON(http.StatusOK, user.Livros)
+}
 
 func getUserbyId(id string) (*usuario, error) {
 	for i, u := range users {
