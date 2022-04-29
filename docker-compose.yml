@@ -15,5 +15,15 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
 
+  app:
+    container_name: server
+    image: meloneng/troca_livros
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "db"
+    
+
 volumes:
   pg_data:
