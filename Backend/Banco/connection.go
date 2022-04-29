@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	host     = "localhost"
+	host     = "livros-postgres"
 	port     = 5432
 	user     = "root"
 	password = "root"
