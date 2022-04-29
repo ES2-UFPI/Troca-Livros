@@ -38,8 +38,6 @@ func getBooksFromUser(context *gin.Context) {
 
 	context.IndentedJSON(http.StatusOK, user.Livros)
 
-}
-
 func getUserbyId(id string) (*usuario, error) {
 	for i, u := range users {
 		if u.Id == id {
@@ -83,5 +81,5 @@ func Run() {
 	router.GET("/users/:id", getUser)
 	router.GET("/books/:id", getBooksFromUser)
 	router.POST("/users", addUser)
-	router.Run("localhost:8080")
+	router.Run("0.0.0.0:8080")
 }
