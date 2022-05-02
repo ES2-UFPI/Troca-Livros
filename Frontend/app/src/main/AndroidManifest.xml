@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tinli">
         <activity
-            android:name=".Regiter"
+            android:name=".App.Controllers.Register"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".App.Controllers.Login"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".App.Controllers.Home"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".App.Controllers.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
