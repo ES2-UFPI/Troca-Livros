@@ -1,4 +1,4 @@
-package com.rubick.tinli.App.Controllers;
+package com.rubick.tinli.Controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
