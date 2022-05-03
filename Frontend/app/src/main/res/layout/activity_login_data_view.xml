@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EDFAFA"
-    tools:context=".LoginDataView">
+    tools:context=".Controllers.LoginDataView">
 
     <ImageView
-        android:id="@+id/back_bt"
+        android:id="@+id/login_data_back_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -57,8 +57,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
+        android:id="@+id/input_name"
         android:layout_marginTop="30dp"
-        android:id="@+id/name"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/custom_input_login_data"
@@ -73,7 +73,7 @@
         tools:ignore="Autofill" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/input_password"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -85,12 +85,12 @@
         android:textColorHint="#B8D9D9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/input_name"
         tools:ignore="Autofill" />
 
     <EditText
+        android:id="@+id/input_confirm_password"
         android:layout_marginTop="15dp"
-        android:id="@+id/editText2"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/custom_input_login_data"
@@ -101,18 +101,18 @@
         android:textColorHint="#B8D9D9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/input_password"
         tools:ignore="Autofill" />
 
     <ImageView
+        android:id="@+id/login_data_create_login_bt"
         android:layout_marginTop="20dp"
-        android:id="@+id/login_bt"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/login_bt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/input_confirm_password"
         tools:ignore="ContentDescription" />
 
     <TextView
