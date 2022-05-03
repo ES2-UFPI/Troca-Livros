@@ -76,11 +76,27 @@ func AddUser(context *gin.Context) {
 	context.JSON(http.StatusCreated, newUser)
 }
 
+func AddBook(context *gin.Context) {
+	id := context.Param("id")
+	user, err := GetUserbyId(id)
+
+	if err != nil {
+		context.JSON(http.StatusNotFound, gin.H{"message": "User not found"})
+		return
+	}
+
+	user.Livros = append(user.Livros, id)
+
+	context.JSON(http.StatusCreated, id)
+
+}
+
 func Run() {
 	router := gin.Default()
 	router.GET("/users", GetUsers)
 	router.GET("/users/:id", GetUser)
 	router.GET("/books/:id", GetBooksFromUser)
+	router.POST("/books/:id", AddBook)
 	router.POST("/users", AddUser)
 	router.Run("0.0.0.0:8080")
 }
