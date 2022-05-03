@@ -1,8 +1,10 @@
-package com.rubick.tinli;
+package com.rubick.tinli.Controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.rubick.tinli.R;
 
 public class Home extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background_color"
-    tools:context=".App.Controllers.Login">
+    tools:context=".App.Controllers.Register">
 
     <ImageView
         android:id="@+id/back_bt"
@@ -20,97 +20,120 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/rockwell_bold"
-        android:text="@string/login"
-        android:textColor="@color/app_yellow_color"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:layout_marginBottom="40dp"
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/proxima_nova"
-        android:text="@string/welcome"
-        android:textColor="#929189"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/email_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/email_input"
-        android:layout_marginBottom="20dp"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/email_input_icon"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/app_gray_color"
-        android:textColorHint="@color/app_input_unfocused_color"
-        app:layout_constraintBottom_toTopOf="@+id/password_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="Autofill" />
-
-    <EditText
-        android:id="@+id/password_input"
-        android:layout_marginBottom="20dp"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/password_icon"
-        android:drawablePadding="10dp"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColor="@color/app_gray_color"
-        android:textColorHint="@color/app_input_unfocused_color"
-        app:layout_constraintBottom_toTopOf="@+id/login_bt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="Autofill" />
-
     <ImageView
         android:layout_marginBottom="20dp"
-        android:id="@+id/login_bt"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/login_bt"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:layout_marginBottom="20dp"
-        android:id="@+id/textView6"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/proxima_nova_medium"
-        android:text="@string/cannot_log_in"
-        android:textColor="@color/app_gray_color"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/createNewAccount"
+        android:fontFamily="@font/proxima_nova"
+        android:text="@string/register_welcome_message"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/createNewAccount"
-        android:textColor="#7cdcdc"
-        android:textSize="18sp"
-        android:fontFamily="@font/proxima_nova_medium"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/create_new_account"
+        android:text="@string/register_sub_message"
+        android:textColor="#767c7c"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email_input_icon"
+        android:hint="@string/name_input"
+        android:inputType="text"
+        android:textColor="@color/app_gray_color"
+        android:textColorHint="@color/app_input_unfocused_color"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email_input_icon"
+        android:hint="@string/email_input"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/app_gray_color"
+        android:textColorHint="@color/app_input_unfocused_color"
+        app:layout_constraintBottom_toTopOf="@+id/cpf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/cpf"
+        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email_input_icon"
+        android:hint="@string/cpf_input"
+        android:inputType="number"
+        app:mask="###.###.###-##"
+        app:maskCharacter="#"
+        android:textColor="@color/app_gray_color"
+        android:textColorHint="@color/app_input_unfocused_color"
+        app:layout_constraintBottom_toTopOf="@+id/cellphoneInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/cellphoneInput"
+        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email_input_icon"
+        android:hint="@string/cellphone_input"
+        android:inputType="phone"
+        app:mask="(##)9 ####-####"
+        app:maskCharacter="#"
+        android:textColor="@color/app_gray_color"
+        android:textColorHint="@color/app_input_unfocused_color"
+        app:layout_constraintBottom_toTopOf="@+id/CreateAccountBt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/CreateAccountBt"
+        android:layout_marginBottom="15dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/app_yellow_color"
+        android:text="@string/register_bt_text"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -5,7 +5,7 @@
     android:background="#204040"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".App.Controllers.MainActivity">
 
     <ImageView
         android:layout_marginBottom="450dp"
@@ -65,6 +65,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/CreateAccountBt"
         android:backgroundTint="#475959"
         app:cornerRadius="10dp"
         android:text="@string/register_bt_text"

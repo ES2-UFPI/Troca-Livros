@@ -1,7 +1,13 @@
 package main
 
-import api "github.com/ES2-UFPI/Troca-Livros/Backend/API"
+import (
+	con "github.com/ES2-UFPI/Troca-Livros/Backend/Banco"
+	api "github.com/ES2-UFPI/Troca-Livros/Backend/api"
+)
 
 func main() {
+
+	con.Conn()
+
 	api.Run()
 }

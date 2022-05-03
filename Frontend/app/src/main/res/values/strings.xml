@@ -10,4 +10,15 @@
     <string name="welcome">Bem vindo de volta!</string>
     <string name="cannot_log_in">Não consegue fazer login?</string>
     <string name="create_new_account">CRIAR NOVA CONTA</string>
+    <string name="register_sub_message">Primeiro, precisamos te conhecer.</string>
+    <string name="register_welcome_message">Olá leitor, vamos começar!</string>
+    <string name="cellphone_input">Celular com DDD</string>
+    <string name="cpf_input">CPF</string>
+    <string name="email_input">Seu melhor email</string>
+    <string name="name_input">Nome completo</string>
+    <string name="user_input">Usuário</string>
+    <string name="login_data_title_text">Defina seus dados de login</string>
+    <string name="login_data_password_advices">Evite sequências numéricas, datas de \n aniversário ou número de documentos</string>
+    <string name="password_input">Senha</string>
+    <string name="confirm_password_input">Confirmar senha</string>
 </resources>

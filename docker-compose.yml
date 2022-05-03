@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+
+  db:
+    container_name: livros-postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  app:
+    container_name: server
+    image: meloneng/troca_livros
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "db"
+    
+
+volumes:
+  pg_data:
