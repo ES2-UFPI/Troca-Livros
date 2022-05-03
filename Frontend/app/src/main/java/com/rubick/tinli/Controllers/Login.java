@@ -1,4 +1,4 @@
-package com.rubick.tinli;
+package com.rubick.tinli.Controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.rubick.tinli.R;
+import com.rubick.tinli.Services.Validator;
 
 public class Login extends AppCompatActivity {
     private ImageView loginBt;
@@ -35,18 +38,28 @@ public class Login extends AppCompatActivity {
         createAccount = findViewById(R.id.createNewAccount);
 
         createAccount.setOnClickListener(v -> {
-            Intent register = new Intent(getApplicationContext(), Regiter.class);
+            Intent register = new Intent(getApplicationContext(), Register.class);
             startActivity(register);
         });
 
         loginBt.setOnClickListener(v ->{
-            if(email.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
-                Toast.makeText(getApplicationContext(), "Todos os campos devem ser preenchidos!", Toast.LENGTH_SHORT).show();
+            if(!isValidRegister(email) || !isValidRegister(password)){
+                return;
             }
+            //Go to Home View
+            Toast.makeText(getApplicationContext(), "Logado com sucesso", Toast.LENGTH_SHORT).show();
         });
 
         backBt.setOnClickListener(v -> {
             this.finish();
         });
+    }
+
+    private boolean isValidRegister(EditText input){
+        if(Validator.isEmpty(input.getText().toString().trim())){
+            Toast.makeText(getApplicationContext(), "Todos os campos devem ser preenchidos!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 }

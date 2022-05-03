@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background_color"
-    tools:context=".Regiter">
+    tools:context=".App.Controllers.Register">
 
     <ImageView
         android:id="@+id/back_bt"
@@ -53,14 +53,14 @@
         android:text="@string/register_sub_message"
         android:textColor="#767c7c"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintBottom_toTopOf="@+id/input_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
     <EditText
+        android:id="@+id/input_name"
         android:layout_marginBottom="20dp"
-        android:id="@+id/name"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/custom_input"
@@ -75,8 +75,8 @@
         tools:ignore="Autofill" />
 
     <EditText
-        android:layout_marginBottom="20dp"
         android:id="@+id/email"
+        android:layout_marginBottom="20dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/custom_input"
@@ -90,15 +90,17 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="Autofill" />
 
-    <EditText
-        android:layout_marginBottom="20dp"
+    <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/cpf"
+        android:layout_marginBottom="20dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/email_input_icon"
         android:hint="@string/cpf_input"
-        android:inputType="text"
+        android:inputType="number"
+        app:mask="###.###.###-##"
+        app:maskCharacter="#"
         android:textColor="@color/app_gray_color"
         android:textColorHint="@color/app_input_unfocused_color"
         app:layout_constraintBottom_toTopOf="@+id/cellphoneInput"
@@ -106,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="Autofill" />
 
-    <EditText
+    <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/cellphoneInput"
         android:layout_marginBottom="20dp"
         android:layout_width="300dp"
@@ -115,16 +117,18 @@
         android:drawableStart="@drawable/email_input_icon"
         android:hint="@string/cellphone_input"
         android:inputType="phone"
+        app:mask="(##)9 ####-####"
+        app:maskCharacter="#"
         android:textColor="@color/app_gray_color"
         android:textColorHint="@color/app_input_unfocused_color"
-        app:layout_constraintBottom_toTopOf="@+id/registerBt"
+        app:layout_constraintBottom_toTopOf="@+id/CreateAccountBt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="Autofill" />
 
     <Button
+        android:id="@+id/CreateAccountBt"
         android:layout_marginBottom="15dp"
-        android:id="@+id/registerBt"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:backgroundTint="@color/app_yellow_color"

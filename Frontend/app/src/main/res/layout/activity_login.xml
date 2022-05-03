@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background_color"
-    tools:context=".Login">
+    tools:context=".App.Controllers.Login">
 
     <ImageView
         android:id="@+id/back_bt"
@@ -126,4 +126,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
