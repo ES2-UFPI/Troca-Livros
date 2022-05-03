@@ -26,10 +26,10 @@ var users = []usuario{
 		Senha: "123", Livros: []string{}},
 }
 
-func getBooksFromUser(context *gin.Context) {
+func GetBooksFromUser(context *gin.Context) {
 
 	userid := context.Param("id")
-	user, err := getUserbyId(userid)
+	user, err := GetUserbyId(userid)
 
 	if err != nil {
 		context.JSON(http.StatusNotFound, gin.H{"message": "User not found"})
@@ -39,7 +39,7 @@ func getBooksFromUser(context *gin.Context) {
 	context.IndentedJSON(http.StatusOK, user.Livros)
 }
 
-func getUserbyId(id string) (*usuario, error) {
+func GetUserbyId(id string) (*usuario, error) {
 	for i, u := range users {
 		if u.Id == id {
 			return &users[i], nil
@@ -49,13 +49,13 @@ func getUserbyId(id string) (*usuario, error) {
 	return nil, errors.New("User not found")
 }
 
-func getUsers(context *gin.Context) {
+func GetUsers(context *gin.Context) {
 	context.IndentedJSON(http.StatusOK, users)
 }
 
-func getUser(context *gin.Context) {
+func GetUser(context *gin.Context) {
 	id := context.Param("id")
-	user, err := getUserbyId(id)
+	user, err := GetUserbyId(id)
 
 	if err != nil {
 		context.JSON(http.StatusNotFound, gin.H{"message": "User not found"})
@@ -65,7 +65,7 @@ func getUser(context *gin.Context) {
 	context.IndentedJSON(http.StatusOK, user)
 }
 
-func addUser(context *gin.Context) {
+func AddUser(context *gin.Context) {
 	var newUser usuario
 
 	if err := context.BindJSON(&newUser); err != nil {
@@ -76,11 +76,51 @@ func addUser(context *gin.Context) {
 	context.JSON(http.StatusCreated, newUser)
 }
 
+func AddBook(context *gin.Context) {
+	id := context.Param("id")
+	name := context.Param("name")
+	user, err := GetUserbyId(id)
+
+	if err != nil {
+		context.JSON(http.StatusNotFound, gin.H{"message": "User not found"})
+		return
+	}
+
+	user.Livros = append(user.Livros, name)
+
+	context.JSON(http.StatusCreated, id)
+
+}
+
+func DeleteBook(context *gin.Context) {
+	id := context.Param("id")
+	name := context.Param("name")
+	user, err := GetUserbyId(id)
+
+	if err != nil {
+		context.JSON(http.StatusNotFound, gin.H{"message": "User not found"})
+		return
+	}
+
+	for i := 0; i < len(user.Livros); i++ {
+		if user.Livros[i] == name {
+			user.Livros[i] = user.Livros[len(user.Livros)-1]
+			user.Livros[len(user.Livros)-1] = ""
+			user.Livros = user.Livros[:len(user.Livros)-1]
+
+			context.JSON(http.StatusOK, gin.H{"message": "Entry deleted"})
+			return
+		}
+	}
+}
+
 func Run() {
 	router := gin.Default()
-	router.GET("/users", getUsers)
-	router.GET("/users/:id", getUser)
-	router.GET("/books/:id", getBooksFromUser)
-	router.POST("/users", addUser)
+	router.GET("/users", GetUsers)
+	router.GET("/users/:id", GetUser)
+	router.GET("/books/:id", GetBooksFromUser)
+	router.POST("/books/:id/:name", AddBook)
+	router.POST("/users", AddUser)
+	router.DELETE("/books/:id/:name", DeleteBook)
 	router.Run("0.0.0.0:8080")
 }
