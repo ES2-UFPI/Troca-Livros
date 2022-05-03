@@ -78,6 +78,7 @@ func AddUser(context *gin.Context) {
 
 func AddBook(context *gin.Context) {
 	id := context.Param("id")
+	name := context.Param("name")
 	user, err := GetUserbyId(id)
 
 	if err != nil {
@@ -85,10 +86,32 @@ func AddBook(context *gin.Context) {
 		return
 	}
 
-	user.Livros = append(user.Livros, id)
+	user.Livros = append(user.Livros, name)
 
 	context.JSON(http.StatusCreated, id)
 
+}
+
+func DeleteBook(context *gin.Context) {
+	id := context.Param("id")
+	name := context.Param("name")
+	user, err := GetUserbyId(id)
+
+	if err != nil {
+		context.JSON(http.StatusNotFound, gin.H{"message": "User not found"})
+		return
+	}
+
+	for i := 0; i < len(user.Livros); i++ {
+		if user.Livros[i] == name {
+			user.Livros[i] = user.Livros[len(user.Livros)-1]
+			user.Livros[len(user.Livros)-1] = ""
+			user.Livros = user.Livros[:len(user.Livros)-1]
+
+			context.JSON(http.StatusOK, gin.H{"message": "Entry deleted"})
+			return
+		}
+	}
 }
 
 func Run() {
@@ -96,7 +119,8 @@ func Run() {
 	router.GET("/users", GetUsers)
 	router.GET("/users/:id", GetUser)
 	router.GET("/books/:id", GetBooksFromUser)
-	router.POST("/books/:id", AddBook)
+	router.POST("/books/:id/:name", AddBook)
 	router.POST("/users", AddUser)
+	router.DELETE("/books/:id/:name", DeleteBook)
 	router.Run("0.0.0.0:8080")
 }
