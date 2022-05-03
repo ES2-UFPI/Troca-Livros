@@ -1,7 +1,8 @@
-package com.rubick.tinli.App.Controllers;
+package com.rubick.tinli.Controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -32,7 +33,7 @@ public class Register extends AppCompatActivity {
     }
 
     private void setItems(){
-        name = findViewById(R.id.name);
+        name = findViewById(R.id.input_name);
         email = findViewById(R.id.email);
         cpf = findViewById(R.id.cpf);
         cellphone = findViewById(R.id.cellphoneInput);
@@ -46,21 +47,21 @@ public class Register extends AppCompatActivity {
 
         CreateAccountBt.setOnClickListener(v ->{
             if(!isValidRegister()) return;
-            //go to passwordregistration
-            Toast.makeText(getApplicationContext(), "Dados de usuário registrados com sucesso!", Toast.LENGTH_SHORT).show();
+            Intent loginDataView = new Intent(getApplicationContext(), LoginDataView.class);
+            startActivity(loginDataView);
         });
     }
 
     private boolean isValidRegister(){
         String nameSt = name.getText().toString().trim();
         String emailSt = email.getText().toString().trim();
+        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
 
         if(Validator.isEmpty(nameSt) || Validator.isEmpty(emailSt)){
             Toast.makeText(getApplicationContext(), "Todos os campos devem ser preenchidos!", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
         if(!emailSt.matches(emailRegex)){
             Toast.makeText(getApplicationContext(), "Email inválido!", Toast.LENGTH_SHORT).show();
             return false;
@@ -74,6 +75,8 @@ public class Register extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Celular inválido", Toast.LENGTH_SHORT).show();
             return false;
         }
+
+        //TODO: Conferir se já existe um usuário com o mesmo email
         return true;
     }
 

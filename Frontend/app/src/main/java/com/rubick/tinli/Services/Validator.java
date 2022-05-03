@@ -11,4 +11,5 @@ public class Validator {
     }
 
     public static boolean isDone(MaskEditText input){ return input.isDone();}
+    public static boolean PasswordsMatch(String password, String confirmPassword){ return password.equals(confirmPassword);}
 }

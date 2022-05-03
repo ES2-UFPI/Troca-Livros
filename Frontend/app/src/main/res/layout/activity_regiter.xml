@@ -53,13 +53,13 @@
         android:text="@string/register_sub_message"
         android:textColor="#767c7c"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintBottom_toTopOf="@+id/input_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/input_name"
         android:layout_marginBottom="20dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
