@@ -3,3 +3,5 @@ Banco -> connection.go
 
 docker-compose DB configuration enrionment variables
 
+Dont forget to have the executable shell files not included on the main branch
+
