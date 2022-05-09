@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	host     = "livros-postgres"
+	host     = "localhost"
 	port     = 5432
 	user     = "root"
 	password = "root"
@@ -16,7 +16,7 @@ const (
 )
 
 var (
-	DB *sql.DB
+	db *sql.DB
 )
 
 func Conn() {
@@ -25,20 +25,26 @@ func Conn() {
 		"password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbname)
 
-	db, err := sql.Open("postgres", psqlInfo)
+	result, err := sql.Open("postgres", psqlInfo)
 	if err != nil {
 		panic(err)
 	}
 
-	defer db.Close()
+	defer result.Close()
 
-	err = db.Ping()
+	err = result.Ping()
 	if err != nil {
 		panic(err)
 	}
 
 	fmt.Println("Successfully Connected to the DB!")
 
+	db = result
+
+}
+
+func GetDatabase() *sql.DB {
+	return db
 }
 
 func InsertUsuariosDO(nome, cpf, telefone, email, endereco, data_nascimento, senha string) {
@@ -47,7 +53,7 @@ func InsertUsuariosDO(nome, cpf, telefone, email, endereco, data_nascimento, sen
 	VALUES ($1,$2,$3,$4,$5,$6,$7)
 	RETURNING usuario_id`
 	id := 0
-	err := DB.QueryRow(sqlStatement, nome, cpf, telefone, email, endereco, data_nascimento, senha).Scan(&id)
+	err := db.QueryRow(sqlStatement, nome, cpf, telefone, email, endereco, data_nascimento, senha).Scan(&id)
 	if err != nil {
 		panic(err)
 	}
@@ -60,7 +66,7 @@ func InsertLivrosDO(usuario_id int, titulo, autor, data_publicacao, editora, res
 	VALUES ($1,$2,$3,$4,$5,$6,$7)
 	RETURNING livro_id`
 	id := 0
-	err := DB.QueryRow(sqlStatement, usuario_id, titulo, autor, data_publicacao, editora, resumo, categoria).Scan(&id)
+	err := db.QueryRow(sqlStatement, usuario_id, titulo, autor, data_publicacao, editora, resumo, categoria).Scan(&id)
 	if err != nil {
 		panic(err)
 	}
@@ -73,7 +79,7 @@ func InsertPublicacoesDO(usuario_id, livro_id int, local, status_atual string) {
 	VALUES ($1,$2,$3,$4)
 	RETURNING publicacao_id`
 	id := 0
-	err := DB.QueryRow(sqlStatement, usuario_id, livro_id, local, status_atual).Scan(&id)
+	err := db.QueryRow(sqlStatement, usuario_id, livro_id, local, status_atual).Scan(&id)
 	if err != nil {
 		panic(err)
 	}
