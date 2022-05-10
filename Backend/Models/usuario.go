@@ -2,9 +2,9 @@ package models
 
 import "gorm.io/gorm"
 
-type Usuarios struct {
+type Usuario struct {
 	gorm.Model
-	usuario_id      int    `json:"usuario_id" gorm:"primaryKey"`
+	usuario_id      uint   `json:"usuario_id" gorm:"primaryKey"`
 	nome            string `json:"nome"`
 	cpf             string `json:"cpf"`
 	telefone        string `json:"telefone"`
