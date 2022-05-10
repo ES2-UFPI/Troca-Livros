@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	con.Conn()
+	con.GetDatabase()
 
 	api.Run()
 }

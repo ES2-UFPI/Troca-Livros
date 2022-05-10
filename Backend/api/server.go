@@ -1,10 +1,15 @@
 package api
 
 import (
+	"errors"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
+
+	_ "github.com/ES2-UFPI/Troca-Livros/Backend/Banco"
 )
 
-/*type usuario struct {
+type usuario struct {
 	Id         string   `json:"id"`
 	Nome       string   `json:"nome"`
 	Cpf        string   `json:"cpf"`
@@ -70,14 +75,23 @@ func AddUser(context *gin.Context) {
 	}
 	users = append(users, newUser)
 
-	db := banco.GetDatabase()
-
 	context.JSON(http.StatusCreated, newUser)
+
 }
 
 func AddBook(context *gin.Context) {
+	id := context.Param("id")
+	name := context.Param("name")
+	user, err := GetUserbyId(id)
 
+	if err != nil {
+		context.JSON(http.StatusNotFound, gin.H{"message": "User not found"})
+		return
+	}
 
+	user.Livros = append(user.Livros, name)
+
+	context.JSON(http.StatusCreated, id)
 
 }
 
@@ -101,17 +115,15 @@ func DeleteBook(context *gin.Context) {
 			return
 		}
 	}
-}*/
+}
 
 func Run() {
 	router := gin.Default()
-	/*router.GET("/users", GetUsers)
+	router.GET("/users", GetUsers)
 	router.GET("/users/:id", GetUser)
 	router.GET("/books/:id", GetBooksFromUser)
-	router.POST("/books", AddBook)
+	router.POST("/books/:id/:name", AddBook)
 	router.POST("/users", AddUser)
 	router.DELETE("/books/:id/:name", DeleteBook)
-	*/
-	router.GET("/")
 	router.Run("0.0.0.0:8080")
 }

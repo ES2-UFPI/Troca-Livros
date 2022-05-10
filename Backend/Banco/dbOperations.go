@@ -1,10 +1,13 @@
 package banco
 
 import (
-	"database/sql"
 	"fmt"
+	"log"
+	"time"
 
 	_ "github.com/lib/pq"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 const (
@@ -16,9 +19,10 @@ const (
 )
 
 var (
-	db *sql.DB
+	db *gorm.DB
 )
 
+/*
 func Conn() {
 
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
@@ -42,12 +46,33 @@ func Conn() {
 	db = result
 
 }
+*/
 
-func GetDatabase() *sql.DB {
+func StartDB() {
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
+		"password=%s dbname=%s sslmode=disable",
+		host, port, user, password, dbname)
+
+	database, err := gorm.Open(postgres.Open(psqlInfo), &gorm.Config{})
+	if err != nil {
+		log.Fatal("error: ", err)
+	}
+
+	db = database
+
+	config, _ := db.DB()
+
+	config.SetMaxIdleConns(10)
+	config.SetMaxOpenConns(100)
+	config.SetConnMaxLifetime(time.Hour)
+
+}
+
+func GetDatabase() *gorm.DB {
 	return db
 }
 
-func InsertUsuariosDO(nome, cpf, telefone, email, endereco, data_nascimento, senha string) {
+/*func InsertUsuariosDO(nome, cpf, telefone, email, endereco, data_nascimento, senha string) {
 	sqlStatement := `
 	INSERT INTO Usuarios (nome, cpf, telefone, email, endereco, data_nascimento, senha)
 	VALUES ($1,$2,$3,$4,$5,$6,$7)
@@ -85,3 +110,4 @@ func InsertPublicacoesDO(usuario_id, livro_id int, local, status_atual string) {
 	}
 	fmt.Println("New record ID is:", id)
 }
+*/
