@@ -4,11 +4,11 @@ import "gorm.io/gorm"
 
 type Transferencia struct {
 	gorm.Model
-	transferencia_id     uint   `json:"transferencia_id" gorm:"primaryKey"`
-	publicacao_id        uint   `json:"publicacao_id"`
-	interessado_id       uint   `json:"interessado_id"`
-	livro_interessado_id uint   `json:"livro_interessado_id"`
-	data_inicio          string `json:"data_inicio"`
-	local_encontro       string `json:"local_encontro"`
-	finalizado           bool   `json:"finalizado"`
+	Transferencia_id     uint   `json:"transferencia_id" gorm:"primaryKey"`
+	Publicacao_id        uint   `json:"publicacao_id"`
+	Interessado_id       uint   `json:"interessado_id"`
+	Livro_interessado_id uint   `json:"livro_interessado_id"`
+	Data_inicio          string `json:"data_inicio"`
+	Local_encontro       string `json:"local_encontro"`
+	Finalizado           bool   `json:"finalizado"`
 }
