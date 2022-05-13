@@ -1,1 +1,4 @@
-DROP TABLE IF EXISTS usuarios;
+DROP TABLE IF EXISTS "Usuarios";
+DROP TABLE IF EXISTS "Livros";
+DROP TABLE IF EXISTS "Transferencias";
+DROP TABLE IF EXISTS "Publicacoes";
