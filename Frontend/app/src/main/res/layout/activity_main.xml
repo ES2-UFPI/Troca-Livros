@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/CreateAccountBt"
+        android:id="@+id/finish_bt"
         android:backgroundTint="#475959"
         app:cornerRadius="10dp"
         android:text="@string/register_bt_text"

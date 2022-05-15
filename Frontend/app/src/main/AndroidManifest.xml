@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tinli">
         <activity
+            android:name=".Controllers.TransferView"
+            android:exported="false" />
+        <activity
             android:name=".Controllers.LoginDataView"
             android:exported="false" />
         <activity

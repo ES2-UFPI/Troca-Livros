@@ -121,25 +121,25 @@
         app:maskCharacter="#"
         android:textColor="@color/app_gray_color"
         android:textColorHint="@color/app_input_unfocused_color"
-        app:layout_constraintBottom_toTopOf="@+id/CreateAccountBt"
+        app:layout_constraintBottom_toTopOf="@+id/finish_bt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="Autofill" />
 
     <Button
-        android:id="@+id/CreateAccountBt"
+        android:id="@+id/finish_bt"
         android:layout_marginBottom="15dp"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:backgroundTint="@color/app_yellow_color"
         android:text="@string/register_bt_text"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/bottom_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"

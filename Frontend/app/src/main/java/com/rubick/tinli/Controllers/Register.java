@@ -39,7 +39,7 @@ public class Register extends AppCompatActivity {
         cellphone = findViewById(R.id.cellphoneInput);
 
         backBt = findViewById(R.id.back_bt);
-        CreateAccountBt = findViewById(R.id.CreateAccountBt);
+        CreateAccountBt = findViewById(R.id.finish_bt);
 
         backBt.setOnClickListener(v -> {
             this.finish();
