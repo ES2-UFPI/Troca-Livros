@@ -6,12 +6,16 @@
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable-v24/custom_input_login_data.xml" value="0.290625" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/custom_email_icon.xml" value="0.262037037037037" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/custom_input.xml" value="0.290625" />
+        <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/ic_launcher_background.xml" value="0.290625" />
+        <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/transfer_book_circle.xml" value="0.290625" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout-v28/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_login_data_view.xml" value="0.264" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_regiter.xml" value="0.4" />
+        <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_transfer_view.xml" value="0.264" />
+        <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/post.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

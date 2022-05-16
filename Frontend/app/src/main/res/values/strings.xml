@@ -21,4 +21,8 @@
     <string name="login_data_password_advices">Evite sequências numéricas, datas de \n aniversário ou número de documentos</string>
     <string name="password_input">Senha</string>
     <string name="confirm_password_input">Confirmar senha</string>
+    <string name="default_book_title">BOOK TITLE</string>
+    <string name="default_author">Author</string>
+    <string name="default_category">Category</string>
+    <string name="post_title">POSTAGENS</string>
 </resources>
