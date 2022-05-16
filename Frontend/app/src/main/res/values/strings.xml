@@ -21,4 +21,12 @@
     <string name="login_data_password_advices">Evite sequências numéricas, datas de \n aniversário ou número de documentos</string>
     <string name="password_input">Senha</string>
     <string name="confirm_password_input">Confirmar senha</string>
+    <string name="cancel_transfer_text">Cancelar</string>
+    <string name="finish">Finalizar</string>
+    <string name="transfer_date_text">DATA</string>
+    <string name="transfer_local_text">LOCAL</string>
+    <string name="transfer_default_book_name">Book Name</string>
+    <string name="default_date">05/05/05</string>
+    <string name="default_local">Shopping Rio Poty</string>
+    <string name="test"><![CDATA[This is an <u>underline</u>.]]></string>
 </resources>
