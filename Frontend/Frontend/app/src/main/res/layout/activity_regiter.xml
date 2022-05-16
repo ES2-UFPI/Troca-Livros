@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_color"
+    tools:context=".App.Controllers.Register">
+
+    <ImageView
+        android:id="@+id/back_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:src="@drawable/back_bt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:layout_marginBottom="20dp"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/proxima_nova"
+        android:text="@string/register_welcome_message"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_marginBottom="30dp"
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_sub_message"
+        android:textColor="#767c7c"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email_input_icon"
+        android:hint="@string/name_input"
+        android:inputType="text"
+        android:textColor="@color/app_gray_color"
+        android:textColorHint="@color/app_input_unfocused_color"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email_input_icon"
+        android:hint="@string/email_input"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/app_gray_color"
+        android:textColorHint="@color/app_input_unfocused_color"
+        app:layout_constraintBottom_toTopOf="@+id/cpf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/cpf"
+        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email_input_icon"
+        android:hint="@string/cpf_input"
+        android:inputType="number"
+        app:mask="###.###.###-##"
+        app:maskCharacter="#"
+        android:textColor="@color/app_gray_color"
+        android:textColorHint="@color/app_input_unfocused_color"
+        app:layout_constraintBottom_toTopOf="@+id/cellphoneInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/cellphoneInput"
+        android:layout_marginBottom="20dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email_input_icon"
+        android:hint="@string/cellphone_input"
+        android:inputType="phone"
+        app:mask="(##)9 ####-####"
+        app:maskCharacter="#"
+        android:textColor="@color/app_gray_color"
+        android:textColorHint="@color/app_input_unfocused_color"
+        app:layout_constraintBottom_toTopOf="@+id/finish_bt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/finish_bt"
+        android:layout_marginBottom="15dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/app_yellow_color"
+        android:text="@string/register_bt_text"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/bottom_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:alpha="0.4"
+        android:text="@string/app_name_ltda"
+        android:textColor="#DFDFDF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
