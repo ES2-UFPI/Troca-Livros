@@ -1,23 +1,14 @@
-name: Android CI
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+name: Teste
+on: [push]
 
 jobs:
   build:
-
+    name: Build and Run Tests
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: set up JDK 11
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-
-    - name: Rodar Teste
-      run: java -jar ExampleUnitTest.jar 
+      - name: Checkout Code
+        uses: actions/checkout@v1
+      - name: Build and Run Tests
+        run: java -cp .:/usr/share/java/junit.jar org.junit.runner.JUnitCore ExampleUnitTest.java
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v3
