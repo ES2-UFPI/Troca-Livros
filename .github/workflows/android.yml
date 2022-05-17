@@ -20,12 +20,12 @@ jobs:
         distribution: 'temurin'
 
     - name: Compile Project
-      run: javac MainActivity.java
+      run: javac ./MainActivity.java
     - name: Run Project
-      run: java MainActivity
+      run: java ./MainActivity
     - name: run test
-      run: javac ExampleUnitTest.java
+      run: javac ./ExampleUnitTest.java
     - name: Compile Project
-      run: java ExampleUnitTest
+      run: java ./ExampleUnitTest
     
       
