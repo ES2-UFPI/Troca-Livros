@@ -19,8 +19,13 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
 
+    - name: Compile Project
+      run: javac MainActivity.java
     - name: Run Project
-      run: java MainActivity.java
-    - name: Run test
-      run: java ExampleUnitTest.java
+      run: java MainActivity
+    - name: run test
+      run: javac ExampleUnitTest.java
+    - name: Compile Project
+      run: java ExampleUnitTest
+    
       
