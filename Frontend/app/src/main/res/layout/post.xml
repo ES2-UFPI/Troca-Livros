@@ -55,7 +55,7 @@
         android:id="@+id/postBt"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:backgroundTint="#E6D9B3"
+        android:backgroundTint="@color/app_yellow_color"
         android:text="@string/post_button_text"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -8,6 +8,7 @@
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/custom_input.xml" value="0.290625" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/ic_launcher_background.xml" value="0.290625" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/menu_bar.xml" value="0.28615384615384615" />
+        <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/popup_background_layout.xml" value="0.28615384615384615" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/post_background_layout.xml" value="0.28615384615384615" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/drawable/transfer_book_circle.xml" value="0.290625" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout-v28/activity_main.xml" value="0.27447916666666666" />
@@ -17,6 +18,7 @@
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_regiter.xml" value="0.264" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/activity_transfer_view.xml" value="0.264" />
+        <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/popup.xml" value="0.27447916666666666" />
         <entry key="..\:/Matheus/Projetos/ES_2/Frontend/app/src/main/res/layout/post.xml" value="0.27447916666666666" />
       </map>
     </option>
