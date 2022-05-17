@@ -1,5 +1,25 @@
 package api
 
+import (
+	db "github.com/ES2-UFPI/Troca-Livros/Backend/Banco/db/sqlc"
+	"github.com/gin-gonic/gin"
+)
+
+type Server struct {
+	store  *db.Store
+	router *gin.Engine
+}
+
+func NewServer(store *db.Store) *Server {
+	server := &Server{store: store}
+	router := gin.Default()
+
+	router.POST("/users", server.createUser)
+
+	server.router = router
+	return server
+}
+
 /*
 type usuario struct {
 	Id         string   `json:"id"`
