@@ -1,12 +1,6 @@
 package api
 
-import (
-	"errors"
-	"net/http"
-
-	"github.com/gin-gonic/gin"
-)
-
+/*
 type usuario struct {
 	Id         string   `json:"id"`
 	Nome       string   `json:"nome"`
@@ -113,14 +107,16 @@ func DeleteBook(context *gin.Context) {
 		}
 	}
 }
-
+*/
 func Run() {
-	router := gin.Default()
-	router.GET("/users", GetUsers)
-	router.GET("/users/:id", GetUser)
-	router.GET("/books/:id", GetBooksFromUser)
-	router.POST("/books/:id/:name", AddBook)
-	router.POST("/users", AddUser)
-	router.DELETE("/books/:id/:name", DeleteBook)
-	router.Run("0.0.0.0:8080")
+	/*
+		router := gin.Default()
+		router.GET("/users", GetUsers)
+		router.GET("/users/:id", GetUser)
+		router.GET("/books/:id", GetBooksFromUser)
+		router.POST("/books/:id/:name", AddBook)
+		router.POST("/users", AddUser)
+		router.DELETE("/books/:id/:name", DeleteBook)
+		router.Run("0.0.0.0:8080")
+	*/
 }
