@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Button startSeason = findViewById(R.id.start_season);
+       /* Button startSeason = findViewById(R.id.start_season);
         Button registerBt = findViewById(R.id.CreateAccountBt);
 
         startSeason.setOnClickListener(v ->{
@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         registerBt.setOnClickListener(v ->{
             Intent register = new Intent(getApplicationContext(), Register.class);
             startActivity(register);
-        });
+        });*/
+
+        Intent home = new Intent(getApplicationContext(), Home.class);
+        startActivity(home);
     }
 }

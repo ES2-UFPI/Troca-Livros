@@ -25,4 +25,5 @@
     <string name="default_author">Author</string>
     <string name="default_category">Category</string>
     <string name="post_title">POSTAGENS</string>
+    <string name="post_button_text">Trocar</string>
 </resources>
